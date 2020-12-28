@@ -1,10 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Section({ title, children }) {
+function Section({ title, children }) {
   return (
     <section>
-      <h2>{title}</h2>
+      {title && <h2>{title}</h2>}
       {children}
     </section>
   );
 }
+
+Section.defaultProps = {
+  title: '',
+};
+Section.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Section;
