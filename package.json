@@ -1,7 +1,7 @@
 {
   "name": "start-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://artiss90.github.io/start-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
