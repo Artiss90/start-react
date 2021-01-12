@@ -3,18 +3,16 @@ import PropTypes from 'prop-types';
 
 function Section({ title, children }) {
   return (
-    <section>
+    <div>
       {title && <h2>{title}</h2>}
       {children}
-    </section>
+    </div>
   );
 }
 
-Section.defaultProps = {
-  title: '',
-};
 Section.propTypes = {
-  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Section;
