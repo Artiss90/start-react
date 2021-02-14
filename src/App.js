@@ -1,9 +1,9 @@
 // import MyComponent from 'Components/MyComponent/MyComponent';
-import Toggler from 'path/RenderProp/Toggler';
-import { createContext } from 'react';
-
-const ThemeContext = createContext();
-ThemeContext.displayName = 'ThemeContext';
+// import Toggler from 'path/RenderProp/Toggler';
+import UserMenu from 'Components/UserMenu/UserMenu';
+import AuthContext from 'context/Auth';
+import ThemeContext from 'context/ThemeContext';
+import { Component } from 'react';
 
 // function App() {
 //   return (
@@ -36,13 +36,22 @@ ThemeContext.displayName = 'ThemeContext';
 //   );
 // }
 
-const App = () => (
-  <ThemeContext.Provider value="light">
-    <div className="App">
-      <Toolbar />
-    </div>
-  </ThemeContext.Provider>
-);
+class App extends Component {
+  render() {
+    return (
+      <>
+        <AuthContext>
+          <UserMenu />
+          <ThemeContext>
+            <div className="App">
+              <Toolbar />
+            </div>
+          </ThemeContext>
+        </AuthContext>
+      </>
+    );
+  }
+}
 
 const Toolbar = () => (
   <div className="Toolbar">
@@ -53,9 +62,9 @@ const Toolbar = () => (
 
 const Button = ({ label }) => (
   <ThemeContext.Consumer>
-    {theme => (
+    {ctx => (
       <button
-        className={theme === 'light' ? 'btn-light' : 'btn-dark'}
+        className={ctx === 'light' ? 'btn-light' : 'btn-dark'}
         type="button"
       >
         {label}

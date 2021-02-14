@@ -27,3 +27,10 @@ img {
 .box.red {
   background-color: teal;
 }
+
+.btn-light {
+  background: grey;
+}
+.btn-dark {
+  background: brown;
+}
