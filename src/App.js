@@ -1,30 +1,76 @@
-// import PaintingList from './components/PaintingList';
-import ColorPicker from './components/ColorPicker/ColorPicker';
-// import Alert from './components/Alert/Alert';
-import Container from './components/Container/Container';
-import Box from './components/Box/Box';
-// import paintings from './paintings.json';
+// import MyComponent from 'Components/MyComponent/MyComponent';
+// import Toggler from 'path/RenderProp/Toggler';
+import UserMenu from 'Components/UserMenu/UserMenu';
+import AuthContext from 'context/Auth';
+import ThemeContext from 'context/ThemeContext';
+import { Component } from 'react';
 
-const colorPickerOptions = [
-  { label: 'red', color: '#F44336' },
-  { label: 'green', color: '#4CAF50' },
-  { label: 'blue', color: '#2196F3' },
-  { label: 'grey', color: '#607D8B' },
-  { label: 'pink', color: '#E91E63' },
-  { label: 'indigo', color: '#3F51B5' },
-];
+// function App() {
+//   return (
+//     <>
+//       <div>
+//         <Toggler>
+//           {({ isOpen, onToggle }) => (
+//             <>
+//               <button type="button" onClick={onToggle}>
+//                 {isOpen ? 'Hide' : 'Show'}
+//               </button>
+//               {isOpen && <p>Vestibulum suscipit nulla quis orci.</p>}
+//             </>
+//           )}
+//         </Toggler>
 
-export default function App() {
-  return (
-    <Container>
-      <Box type="small" classNames="big red" styles={{ color: '#fff' }} />
-      <Box type="medium" />
-      <Box type="large" />
-      {/* <Alert text="Шеф все пропало!" type="success" /> */}
-      {/* <Alert text="Шеф все пропало!" type="warning" /> */}
-      {/* <Alert text="Шеф все пропало!" type="error" /> */}
-      <ColorPicker options={colorPickerOptions} />
-      {/* <PaintingList items={paintings} /> */}
-    </Container>
-  );
+//         <Toggler>
+//           {({ isOpen, onToggle }) => (
+//             <>
+//               <label>
+//                 <input type="checkbox" checked={isOpen} onChange={onToggle} />
+//                 {isOpen ? 'Hide' : 'Show'}
+//               </label>
+//               {isOpen && <p>Etiam feugiat lorem non metus.</p>}
+//             </>
+//           )}
+//         </Toggler>
+//       </div>
+//     </>
+//   );
+// }
+
+class App extends Component {
+  render() {
+    return (
+      <>
+        <AuthContext>
+          <UserMenu />
+          <ThemeContext>
+            <div className="App">
+              <Toolbar />
+            </div>
+          </ThemeContext>
+        </AuthContext>
+      </>
+    );
+  }
 }
+
+const Toolbar = () => (
+  <div className="Toolbar">
+    <Button label="Log In" />
+    <Button label="Log Out" />
+  </div>
+);
+
+const Button = ({ label }) => (
+  <ThemeContext.Consumer>
+    {ctx => (
+      <button
+        className={ctx === 'light' ? 'btn-light' : 'btn-dark'}
+        type="button"
+      >
+        {label}
+      </button>
+    )}
+  </ThemeContext.Consumer>
+);
+
+export default App;
