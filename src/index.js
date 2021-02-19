@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'modern-normalize/modern-normalize.css';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
+// import store from './redux/store';
 import './index.css';
-import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root'),
 );

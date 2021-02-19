@@ -1,15 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #212121;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: none;
 }
 
 img {
@@ -18,19 +39,17 @@ img {
   height: auto;
 }
 
-.box.big {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 100px;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.box.red {
-  background-color: teal;
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.btn-light {
-  background: grey;
-}
-.btn-dark {
-  background: brown;
+label {
+  cursor: pointer;
 }
