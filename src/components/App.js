@@ -1,20 +1,14 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import routes from 'routes/routes';
-import Layout from './Layout';
-// import CommentsView from 'views/CommentsView';
-// import AppBar from './AppBar';
+import Timer from './Timer';
+import StepSelector from './StepSelector';
+
+const stepOptions = [5, 10, 15, 20, 25, 30];
 
 const App = () => (
-  <>
-    <Layout>
-      <Switch>
-        {routes.map(route => (
-          <Route key={route.path} {...route} />
-        ))}
-      </Switch>
-    </Layout>
-  </>
+  <div>
+    <Timer />
+    <StepSelector options={stepOptions} />
+  </div>
 );
 
 export default App;
