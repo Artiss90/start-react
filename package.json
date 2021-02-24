@@ -4,6 +4,7 @@
   "private": false,
   "homepage": "http://artiss90.github.io/start-react",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
@@ -19,6 +20,7 @@
     "react-scripts": "4.0.1",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
