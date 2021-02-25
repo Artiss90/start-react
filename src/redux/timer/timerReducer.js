@@ -4,10 +4,10 @@ import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
 const valueReducer = (state = 0, { type, payload }) => {
   switch (type) {
     case INCREMENT:
-      return state + payload.value;
+      return state + payload;
 
     case DECREMENT:
-      return state - payload.value < 0 ? state : state - payload.value;
+      return state - payload < 0 ? state : state - payload;
 
     default:
       return state;
@@ -17,7 +17,7 @@ const valueReducer = (state = 0, { type, payload }) => {
 const stepReducer = (state = 5, { type, payload }) => {
   switch (type) {
     case CHANGE_STEP:
-      return payload.step;
+      return Number(payload);
 
     default:
       return state;
