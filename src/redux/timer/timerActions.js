@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
-import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
+// TODO избавляемся от типов
+// import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
 
-// TODO упрощаєм код с помощю '@reduxjs/toolkit'
+// TODO упрощаем код с помощью '@reduxjs/toolkit'
 // const increment = value => {
 //   return {
 //     type: INCREMENT,
@@ -11,7 +12,7 @@ import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
 //   };
 // };
 
-const increment = createAction(INCREMENT);
+const increment = createAction('timer/increment');
 // console.log(increment(20));
 
 // const decrement = value => {
@@ -23,7 +24,7 @@ const increment = createAction(INCREMENT);
 //   };
 // };
 
-const decrement = createAction(DECREMENT);
+const decrement = createAction('timer/decrement');
 
 // const changeStep = step => {
 //   return {
@@ -34,6 +35,6 @@ const decrement = createAction(DECREMENT);
 //   };
 // };
 
-const changeStep = createAction(CHANGE_STEP);
+const changeStep = createAction('timer/changeStep');
 // eslint-disable-next-line import/no-anonymous-default-export
 export default { increment, decrement, changeStep };

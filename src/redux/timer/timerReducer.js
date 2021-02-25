@@ -1,6 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
+// import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
+import timerActions from './timerActions';
 
 // const valueReducer = (state = 0, { type, payload }) => {
 //   switch (type) {
@@ -16,8 +17,8 @@ import { INCREMENT, DECREMENT, CHANGE_STEP } from './timerTypes';
 // };
 
 const valueReducer = createReducer(0, {
-  [INCREMENT]: (_, { payload }) => _ + payload,
-  [DECREMENT]: (_, { payload }) => _ - payload,
+  [timerActions.increment]: (_, { payload }) => _ + payload,
+  [timerActions.decrement]: (_, { payload }) => _ - payload,
 });
 
 // const stepReducer = (state = 5, { type, payload }) => {
@@ -31,7 +32,7 @@ const valueReducer = createReducer(0, {
 // };
 
 const stepReducer = createReducer(5, {
-  [CHANGE_STEP]: (_, { payload }) => Number(payload),
+  [timerActions.changeStep]: (_, { payload }) => Number(payload),
 });
 
 export default combineReducers({
