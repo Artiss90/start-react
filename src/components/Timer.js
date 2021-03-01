@@ -32,13 +32,6 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToprops = dispatch => {
-//   return {
-//     onIncrement: value => dispatch(timerActions.increment(value)),
-//     onDecrement: value => dispatch(timerActions.decrement(value)),
-//   };
-// };
-
 const mapDispatchToprops = {
   onIncrement: timerActions.increment,
   onDecrement: timerActions.decrement,
