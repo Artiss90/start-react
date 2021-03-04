@@ -67,6 +67,7 @@ const toggleCompleted = ({ id, completed }) => dispatch => {
     .catch(error => dispatch(toggleCompletedError(error)));
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   fetchTodos,
   addTodo,
